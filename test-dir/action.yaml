@@ -15,6 +15,6 @@ runs:
      if: ${{inputs.checkout-repo == 'true'}}
      uses: actions/checkout@v3
    - name: Run semgrep
-     uses: JasonTestOrgSemgrepMK2/test-actions/test-dir/semgrep
+     uses: JasonTestOrgSemgrepMK2/test-actions/test-dir/semgrep@v1
      with:
        semgrep-app-token: ${{ inputs.semgrep-app-token }}

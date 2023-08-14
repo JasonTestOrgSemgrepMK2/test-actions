@@ -8,9 +8,9 @@ runs:
   using: docker
   image: docker://returntocorp/semgrep
   args:
-    - --user
-    - semgrep
     - semgrep
     - ci
+    - --user
+    - semgrep
   env:
     SEMGREP_APP_TOKEN: ${{ inputs.semgrep-app-token }}

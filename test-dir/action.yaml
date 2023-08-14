@@ -15,6 +15,6 @@ runs:
      if: ${{inputs.checkout-repo == 'true'}}
      uses: actions/checkout@v3
    - name: Run semgrep
-     uses: ${GITHUB_ACTION_PATH}/test-actions/semgrep
+     uses: ${GITHUB_ACTION_PATH}/test-dir/semgrep
      with:
        semgrep-app-token: ${{ inputs.semgrep-app-token }}

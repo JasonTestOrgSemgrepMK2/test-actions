@@ -8,6 +8,7 @@ runs:
   using: docker
   image: docker://returntocorp/semgrep
   args:
+    - --user semgrep
     - semgrep
     - ci
   env:

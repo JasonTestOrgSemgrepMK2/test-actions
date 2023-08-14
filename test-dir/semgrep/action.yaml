@@ -4,11 +4,12 @@ inputs:
   semgrep-app-token:
     required: true
     description: SemGrep API token to be added to repo that allows to pull latest rule config from ruleboard in Semgrep UI
-container:
-  image: returntocorp/semgrep
-  options: --user semgrep
-steps:
-  - name: Run Semgrep
-    run: semgrep ci
-  env:
-    SEMGREP_APP_TOKEN: ${{ inputs.semgrep-app-token }}
+jobs:
+  container:
+    image: returntocorp/semgrep
+    options: --user semgrep
+  steps:
+    - name: Run Semgrep
+      run: semgrep ci
+    env:
+      SEMGREP_APP_TOKEN: ${{ inputs.semgrep-app-token }}

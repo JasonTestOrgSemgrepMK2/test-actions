@@ -22,6 +22,6 @@ jobs:
     steps:
       # Fetch project source with GitHub Actions Checkout.
       - uses: actions/checkout@v3
-      - uses: JasonTestOrgSemgrepMK2/test-actions/test-dir@v1
+      - uses: JasonTestOrgSemgrepMK2/test-actions/test-dir/semgrep@v1
         with:
           semgrep-app-token: ${{ secrets.SEMGREP_APP_TOKEN }}

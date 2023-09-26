@@ -16,7 +16,7 @@ runs:
      uses: actions/checkout@v3
    - name: Checkout repo and run scan
      run: |
-          docker run --rm -v  "${PWD}:/src" \
+          docker run --rm -v  "${PWD}:${GITHUB_REPOSITORY}" \
           -e SEMGREP_APP_TOKEN=${{ inputs.semgrep-app-token }} \
           returntocorp/semgrep:latest-nonroot \
           semgrep ci

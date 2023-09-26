@@ -14,10 +14,7 @@ runs:
    - name: Checkout
      if: ${{inputs.checkout-repo == 'true'}}
      uses: actions/checkout@v3
-    - name: Run semgrep
-      run: |
-          docker run --rm -v "${PWD}:/src" \
-          -e SEMGREP_APP_TOKEN=${{ inputs.semgrep-app-token }} \
-          returntocorp/semgrep:latest-nonroot \
-          semgrep ci
-      shell: bash
+   - name: Run semgrep
+     uses: ${GITHUB_ACTION_PATH}/test-dir/semgrep
+     with:
+       semgrep-app-token: ${{ inputs.semgrep-app-token }}

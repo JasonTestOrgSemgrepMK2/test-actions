@@ -18,7 +18,7 @@ runs:
      run: |
           docker run --rm -v  "${PWD}:/src" \
           -e SEMGREP_APP_TOKEN=${{ inputs.semgrep-app-token }} \
-          -e SEMGREP_REPO_NAME=${GITHUB_REPOSITORY" \
+          -e SEMGREP_REPO_NAME=${GITHUB_REPOSITORY} \
           returntocorp/semgrep:latest-nonroot \
           semgrep ci
      shell: bash

@@ -21,7 +21,7 @@ runs:
           -e SEMGREP_REPO_NAME=${GITHUB_REPOSITORY} \
           -e SEMGREP_BRANCH=${GITHUB_REF} \
           -e SEMGREP_PR_ID=${{github.event.pull_request.number}} \
-          -e SEMGREP_COMMIT="${GITHUB_SHA}" \ 
+          -e SEMGREP_COMMIT=${{ github.sha }} \ 
           returntocorp/semgrep:latest-nonroot \
           semgrep ci
      shell: bash
